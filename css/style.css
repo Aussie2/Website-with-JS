@@ -1,0 +1,281 @@
+/* Austin Tobin FRH7486 */
+/* 635 Austin Tobin FRH7486 website1 JS */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+ #76B947 - Lime Green
+ #B1D8B7 - Kelly Green
+ #2F5233 - Seafoam Green
+ #94C973 - Spearmint
+ */
+
+/* CSS variables/colours etc */
+:root{
+     --mainColor1:#76B947; /* Header and footer  */
+    --mainColor2: #B1D8B7; /* Link hover  */
+    /* --mainColor3: #2F5233; Not used yet  */
+    --mainColor4: #94C973; /* Nav bar  */
+    --font1: 'Times New Roman', Times, serif;
+}
+
+/* Make scroll behaviour smooth */
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--font1);
+}
+
+
+.main-section{
+    border: 1px brown solid;
+    margin: 10px 0px;
+    background-color: white;
+    color: black;
+}
+
+main{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+#main-footer{
+    background-color: var(--mainColor1);
+    height: 75px;
+    text-align: center;
+}
+
+#main-header{
+    background-color: var(--mainColor1);
+}
+
+#main-nav{
+    background-color: var(--mainColor4);
+    position: sticky;
+    top: 5px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 150;
+}
+
+/* start gallery section */
+.gallery-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    border-radius: 10px;
+}
+
+.gallery-col{
+    width: 25%;
+    margin: 10px;
+    text-align: center;
+}
+
+.gallery-col img{
+    width: 100%; 
+    height: 100%;
+}
+
+.gallery-col img:hover{
+    transform: scale(4);
+}
+/* end gallery section */
+
+#nav-left{
+    display: flex;
+}
+
+ul#main-nav-links{
+    display: flex;
+    list-style-type: none;
+}
+
+#forward-back-icons{
+    display: flex;
+}
+
+ /* all 'a' tags in the whole main-nav */
+ #main-nav a{
+    display: block;
+    padding: 5px 10px; /* 5 px top & bottom 10px Left & right */
+ }
+
+ #main-nav a:hover{
+    background-color: var(--mainColor2);
+    
+ }
+/* hide burger menu icon on large screens */
+ a#burger-menu{
+    display: none;
+ }
+
+.tooltip{
+    background-color: black;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 100%;
+    right: 0px;
+    display: none;
+}
+
+#settings-icon:hover .tooltip{
+    display: block;
+}
+
+ #preference-panel{
+    background-color: var(--mainColor4);
+    position: absolute;
+    /* Needs a position property so the child pannel can be absolutely positioned from it */
+    top: 100%;
+    right: 0px;
+    display: none;     /* have to return to none later */
+    
+ }
+
+ #prefs-table{
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.main-section h2{
+    text-align: center;
+}
+
+/* form section  */
+.form-outer{
+    width: 25%;
+}
+
+.form-outer li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-outer > li > label,
+.form-outer li p {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+ 
+.form-outer > li > label + * {
+  flex: 1 0 220px;
+}
+
+.form-outer li button {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    letter-spacing: .09em;
+    border-radius: 2px;
+  }
+
+  .form-text-box{
+    margin: 1.2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+ /* media queries for smaller screen sizes */
+
+/* Tablet size */
+ @media screen and (max-width: 650px) {
+    #forward-back-icons {
+        display: none;
+    }
+    main{
+        width: 90%;
+    }
+ }
+/* phone size */
+ @media screen and (max-width: 450px) {
+    main{
+        width: 98%;
+    }
+    a#burger-menu{
+        display: block;
+    }
+    /* Loose display flex properties - make them blocks */
+    #nav-left{
+        display: block;
+    }
+    ul#main-nav-links{
+        display: none;
+    }
+    nav#main-nav{
+        display: block;
+    }
+    #nav-right{
+        position: absolute;
+        right: 0px;
+        top:0px;
+    }
+ }
+
+ /* Animation section */
+ #animation-area{
+    background-color: white;
+    background-image: url('../images/262667-photography-tiger-animals-big_cats-748x421.jpg');
+    background-size: cover;
+    height: 500px;
+    margin: 2%;
+    border: 1px solid var(--mainColor1);
+    position: relative;
+ }
+
+ #yoke {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, rgba(0,19,36,1) 0%, rgba(110,9,121,1) 50%, rgba(0,212,255,1) 100%);
+    position: absolute;
+    animation: move1 2s infinite;
+    animation-play-state: running;
+    animation-duration: 5s;
+}
+
+#shadow-box{
+    border: #94C973 2px solid;
+}
+.shadow-text {
+    text-shadow: 2px 2px grey;
+    background-color: #2F5233;
+  }
+
+ @keyframes move1 {
+    0% {
+        top: 40%;
+        left:40%;
+        transform: rotate(0deg);
+    }
+    20% {
+        top: 25%;
+        left: 70%;
+        transform: rotate(90deg) scale(0.5);
+    }
+    50% {
+        top: 12%;
+        left: 50%;
+        transform: rotate(180deg) scale(1.5);
+    }
+    80% {
+        top: 25%;
+        left: 10%;
+        transform: rotate(270deg) scale(0.75);
+    }
+    100% {
+        top: 40%;
+        left: 40%;
+        transform: rotate(360deg) scale(1);
+    }
+ }

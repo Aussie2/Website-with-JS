@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!-- Austin Tobin FRH7486 -->
+<!-- 635 Austin Tobin FRH7486 website1 JS -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <title>A Crash Bandacoot!</title>
+</head>
+<body>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- header -->
+    <header id="main-header">
+        <!-- <h1>Logo</h1> -->
+        <svg width="320px" height="94">
+            <circle cx="50" cy="49" r="40" fill="yellow" stroke="grey" stroke-width="10" />
+            <circle cx="75" cy="49" r="30" fill="yellow" stroke="grey" stroke-width="10" />
+            <circle cx="100" cy="49" r="20" fill="yellow" stroke="grey" stroke-width="10" />
+            <circle cx="118" cy="49" r="10" fill="yellow" stroke="grey" stroke-width="10" />
+            <text x="135" y="49" fill="blue" style="font-size:40px">A Crash</text>
+            <text x="135" y="79" fill="blue" style="font-size:40px">Bandacoot</text>
+            <!-- gradient on an elipse! -->
+        </svg>
+    </header>
+
+    <!-- nav bar -->
+    <nav id="main-nav">
+        <div id="nav-left">
+            <!-- menu bars hidden on larger devices -->
+            <a id="burger-menu" href="#"><i class="fa fa-bars"></i></a>
+            <!-- browser forward/background -->
+            <div id="forward-back-icons">
+                <a href="#"><i class="fa fa-arrow-circle-left" onclick="window.history.back()"></i></a>
+                <a href="#"><i class="fa fa-arrow-circle-right" onclick="window.history.forward()"></i></a>
+            </div>
+            <ul id="main-nav-links">
+                <li><a href="#animation-section">Animation</a></li>
+                <li><a href="#gallery-section">Gallery</a></li>
+                <li><a href="#video-section">Video</a></li>
+                <li><a href="#audio-section">Audio</a></li>
+                <li><a href="#location-section">Location</a></li>
+                <li><a href="#forms-section">Forms</a></li>
+            </ul>
+        </div>
+        <div id="nav-right">
+            
+            <a id="settings-icon" href="#"><i class="fa fa-cogs"></i>
+                <div class="tooltip"><p>Change settings</p></div>
+            </a>
+
+            <div id="preference-panel">
+                <!-- TODO add settings stuff -->
+                <table id="prefs-table">
+                    <tr>
+                        <td>Background Colour</td>
+                        <td><input type="color" name="" id="prefs-bgColor"></td>
+                    </tr>
+                    <tr>
+                        <td>Font Colour</td>
+                        <td><input type="color" name="" value="#00ff00" id="prefs-font-color"></td>
+                    </tr>
+                    <tr>
+                        <td id="pref-panel-pixel-size">Font Size <span id="font-size-display"></span> px</td>
+                        <td><input type="range" min="10" max="40" name="" id="prefs-font-size"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><button id="save-btn">Save</button>
+                            <button id="defaults-btn">Reset</button>
+                            <button id="cancel-btn">Cancel</button>
+                            <!-- <button id="test-btn">Test Settings</button> -->
+                        
+                        </td>
+                        <!-- <td><button>Reset Defaults</button></td> -->
+                    </tr>
+                </table>
+                <!-- <button>Save</button>
+                <button>Reset</button>
+                <button>Reset Defaults</button> -->
+
+            </div>
+        </div>
+
+    </nav>
+
+    <main>
+        <!-- Username section -->
+        <section id="username-section" class="main-section">
+            <p>Username: <span id="username"></span>.</p>
+            <button onclick="localStorage.clear()">Clear local storage</button>
+            <button id="reset-username-btn">Reset username button</button>
+            <br>
+            <div id="shadow-box">
+                <p>Enter the <span class="shadow-text">shadow </span> under the text</p>
+                <button id="shadow-btn" class="shadow-text">Shadow under a button</button>
+                <p>
+                    Yes! it looks terrible, but this is an assignment.
+                    <br>
+                    Random "&nbsp&nbsp&nbsp&nbsp"spaces in "&nbsp&nbsp&nbsp&nbsp"random places!  "&nbsp&nbsp&nbsp&nbsp" using &amp;nbsp. <br>
+                    The superscript and subscript are in the footer. <br>
+
+                    <span style="color: red;">Paint it </span>Black 
+                    <span style="color: red;">not </span><span style="color: blue;"> blue</span> 
+                    <span style="font-weight: bold;">Black!!</span>
+                    <br> &nbsp; 
+                </p>
+            </div>
+            <div>
+                <h2>Some plain text marked as "pre"</h2>
+                <pre>
+                < I'm an expert in my field. >
+                ---------------------------
+                       \   ^__^
+                        \  (oo)\_______
+                           (__)\       )\/\
+                               ||----w |
+                               ||     ||
+            </pre>
+            </div>
+        </section>
+
+        <!-- Animation section -->
+        <section id="animation-section" class="main-section">
+            <div id="animation-area">
+                <h2>Animation</h2>
+
+                <p>The below animation is controlled by javascript</p>
+                <div id="yoke"><!-- the joke that the animation moves around! --></div>
+                
+            </div>
+            <div>
+                <button id="animation-start-btn">Start</button>
+                <button id="animation-end-btn">Stop</button>
+                <input type="range" min="1" max="10" name="" id="animation-duration"> <span id="animation-speed">2</span> seconds
+            </div>
+        </section>
+
+        <!-- Gallery section -->
+        <section id="gallery-section" class="main-section"><h2>Gallery</h2>
+            <div class="gallery-flex">
+                <div class="gallery-col">
+                    <img src="images/accommodation.png" alt="">
+                </div>
+                
+                <div class="gallery-col">
+                    <img src="images/dining.png" alt="">
+                </div>
+                
+                <div class="gallery-col">
+                    <img src="images/formal-gardens.png" alt="">
+                </div>
+                
+                <div class="gallery-col">
+                    <img src="images/telescope.png" alt="">
+                </div>
+                
+                <div class="gallery-col">
+                    <img src="images/spiral-m33.png" alt="">
+                </div>
+            </div>
+
+        </section>
+ 
+        <!-- video section -->
+        <section id="video-section" class="main-section">
+            <div class="videos">
+                <h2>Hosted Video</h2>
+                <video width="100%" height="447" controls>
+                    <source src="video/mov_bbb.mp4" type="video/mp4">
+                </video>
+            </div>
+            <br>
+            <div class="videos">
+                <h2>The Pope's Wine! (Youtube Video Embed)</h2>
+
+                <iframe width="100%" height="447" src="https://www.youtube.com/embed/DvqSWsn0ED0" title="Black Books Grapes of Wrath 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Audio section -->
+        <section id="audio-section" class="main-section"><h2>Audio Section</h2> 
+            <audio controls>
+                <source src="audio/sample_audio.mp3" type="audio/mp3">
+                <!-- <source src="audio/sample_audio.wav" type="audio/wav">
+                <source src="audio/sample_audio.ogg" type="audio/ogg"> -->
+            </audio>
+        </section>
+        
+        <!-- geolocation section -->
+        <section id="location-section" class="main-section">
+            <h2>Location</h2>
+            <p>We can use the location API to get your current position</p>
+            <h3>Latitude <span  id="lat"></span></h3>
+            <h3>Longitude <span id="long"></span></h3>
+            <br>
+            <button id="location-btn">Get Location</button>
+            <br><br>
+            <iframe width="100%" height="500" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d37337.58390694583!2d-6.325191793359992!3d53.387309650287264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sie!4v1617277460989!5m2!1sen!2sie" 
+            style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </section>
+
+        <!-- form section -->
+        <section id="forms-section" class="main-section">
+            <div class="form-text-box">
+                <h3>Contact Us</h3>
+                <form action="" method="get">
+                    <ul class="form-outer">
+                      <li>
+                        <label for="first-name">Name*</label>
+                        <input type="text" id="first-name" placeholder="Name here">
+                      </li>
+                      <li>
+                        <label for="age">Age*</label>
+                        <input min="0" type="number" id="age" placeholder="Your age here">
+                      </li>
+                      <li>
+                        <label for="birthday">Date of Birth:</label>
+                        <input type="date" id="birthday" name="birthday">   
+                      </li>
+                      <li>
+                        <label for="gender">Gender:</label>
+
+                        <select id="cars">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                      </li>
+                      <li>
+                        <label for="message">Message*</label>
+                        <textarea rows="6" id="message" placeholder="Message ..."></textarea>
+                      </li>
+                      <li>
+                        <p>(* Indicates a manditary field)</p>
+                      </li>
+                      <li>
+                        <div>
+                            <button type="submit">Reset</button>
+                            <button type="submit">Submit</button>
+                        </div>
+                      </li>
+                    </ul>
+                  </form>
+                  
+              </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="main-footer"> 
+        <p>
+            <br>
+            Copyright &copy Austin Tobin FRH7486 2022;
+            <br>
+            Some <i>Italic script</i> 
+            <br>
+            &#x2207;<sup>2</sup> = <i>&phi;<sub>1</sub></i>
+        </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/geolocation.js"></script>
+</body>
+</html>
